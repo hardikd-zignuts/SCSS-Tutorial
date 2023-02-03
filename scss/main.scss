@@ -1,4 +1,4 @@
-$main-bg-color: blue;
+$main-bg-color: #3c3c3c;
 $main-text-color: white;
 $font-weights: (
   "regular": 400,
@@ -11,6 +11,16 @@ body {
   color: $main-text-color;
 }
 
-div {
-  font-weight: map-get($font-weights, bold);
+.main {
+  width: 40%;
+  margin: 0px auto;
+
+  #{&}__paragraph {
+    font-weight: map-get($font-weights, bold);
+    color: white;
+
+    &:hover {
+      color: greenyellow;
+    }
+  }
 }
