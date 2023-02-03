@@ -1,6 +1,10 @@
 @import "./reset";
 @import "./varible";
 
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
 body {
   background-color: $main-bg-color;
   color: $main-text-color;
@@ -12,7 +16,7 @@ body {
 
   // Nesting Tutorials
   #{&}__paragraph {
-    font-weight: map-get($font-weights, bold);
+    font-weight: weight(bold);
     color: white;
 
     &:hover {
@@ -21,6 +25,4 @@ body {
   }
 }
 
-// Partials:
-// it is a scss file name which start using _ and it ignored by scss compiler so it not generate css file
-// we can use partials for resets file and variable files --> use by @import "./fileName"
+// functions is used to return value that return by map
