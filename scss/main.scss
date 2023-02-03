@@ -1,7 +1,16 @@
 $main-bg-color: blue;
 $main-text-color: white;
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
 
 body {
   background-color: $main-bg-color;
   color: $main-text-color;
+}
+
+div {
+  font-weight: map-get($font-weights, bold);
 }
