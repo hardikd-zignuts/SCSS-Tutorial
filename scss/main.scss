@@ -1,10 +1,5 @@
-$main-bg-color: #3c3c3c;
-$main-text-color: white;
-$font-weights: (
-  "regular": 400,
-  "medium": 500,
-  "bold": 700,
-);
+@import "./reset";
+@import "./varible";
 
 body {
   background-color: $main-bg-color;
@@ -15,6 +10,7 @@ body {
   width: 40%;
   margin: 0px auto;
 
+  // Nesting Tutorials
   #{&}__paragraph {
     font-weight: map-get($font-weights, bold);
     color: white;
@@ -24,3 +20,7 @@ body {
     }
   }
 }
+
+// Partials:
+// it is a scss file name which start using _ and it ignored by scss compiler so it not generate css file
+// we can use partials for resets file and variable files --> use by @import "./fileName"
