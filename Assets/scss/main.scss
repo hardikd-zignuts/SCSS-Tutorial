@@ -39,7 +39,7 @@ body {
   margin: 0px auto;
 
   // Nesting Tutorials
-  #{&}__paragraph {
+  #{&}__paragraph1 {
     font-weight: weight(bold);
     color: white;
     margin: 12px;
@@ -49,8 +49,15 @@ body {
     }
   }
 
+  #{&}__paragraph2 {
+    @extend .main__paragraph1;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
   // add content to mixin
-  @include mobile{
+  @include mobile {
     flex-direction: column;
   }
 }
