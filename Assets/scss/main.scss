@@ -21,13 +21,20 @@
   }
 }
 
+// mixin for responsive design media quires
+@mixin mobile {
+  @media (max-width: $phone) {
+    @content;
+  }
+}
+
 body {
   background-color: $main-bg-color;
   color: $main-text-color;
 }
 
 .main {
-  @include flexCenter(column);
+  @include flexCenter(row);
   width: 40%;
   margin: 0px auto;
 
@@ -40,6 +47,11 @@ body {
     &:hover {
       color: greenyellow;
     }
+  }
+
+  // add content to mixin
+  @include mobile{
+    flex-direction: column;
   }
 }
 
