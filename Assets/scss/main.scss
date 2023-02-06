@@ -32,10 +32,13 @@ body {
   background-color: $main-bg-color;
   color: $main-text-color;
 }
+// operation is use for perform math operation in css
+// in css we use calc(80% - 40%)  OR  calc(80% - 400px)
+// in scss we use 80% - 40%  OR  we only use same type of value
 
 .main {
   @include flexCenter(row);
-  width: 40%;
+  width: 80%-40%;
   margin: 0px auto;
 
   // Nesting Tutorials
