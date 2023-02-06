@@ -13,6 +13,14 @@
   flex-direction: $direction;
 }
 
+// mixin for dark mode and light mode
+@mixin theme($current: true) {
+  @if $current {
+    background: lighten($main-bg-color, 100%);
+    color: darken($main-text-color, 0%);
+  }
+}
+
 body {
   background-color: $main-bg-color;
   color: $main-text-color;
@@ -20,7 +28,6 @@ body {
 
 .main {
   @include flexCenter(column);
-
   width: 40%;
   margin: 0px auto;
 
@@ -37,3 +44,7 @@ body {
 }
 
 // functions is used to return value that return by map
+
+.light {
+  @include theme($current: false);
+}
