@@ -5,12 +5,22 @@
   @return map-get($font-weights, $weight-name);
 }
 
+// created simple mixin
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
 body {
   background-color: $main-bg-color;
   color: $main-text-color;
 }
 
 .main {
+  @include flexCenter(column);
+
   width: 40%;
   margin: 0px auto;
 
@@ -18,6 +28,7 @@ body {
   #{&}__paragraph {
     font-weight: weight(bold);
     color: white;
+    margin: 12px;
 
     &:hover {
       color: greenyellow;
